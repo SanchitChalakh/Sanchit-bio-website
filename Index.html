@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanchit Chalakh | Student</title>
+
+<style>
+:root{
+  --bg:#f2f2f2;
+  --card:#fff;
+  --text:#222;
+  --sub:#666;
+  --btn:#1d2671;
+  --btn-hover:#4338ca;
+}
+body.dark{
+  --bg:#0f172a;
+  --card:#1e293b;
+  --text:#fff;
+  --sub:#cbd5e1;
+  --btn:#6366f1;
+  --btn-hover:#818cf8;
+}
+
+*{box-sizing:border-box; font-family: Arial, Helvetica, sans-serif; margin:0; padding:0; transition:0.3s;}
+
+body{
+  background: var(--bg);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  transition: background 0.5s ease;
+}
+
+.card{
+  background: var(--card);
+  color: var(--text);
+  max-width:400px;
+  width:90%;
+  padding:30px 25px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.profile-pic{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  object-fit:cover;
+  border:5px solid var(--btn);
+  margin-bottom:15px;
+  transition:0.3s;
+}
+.profile-pic:hover{
+  transform: scale(1.1);
+}
+
+h1{ font-size:26px; margin-bottom:5px; }
+.role{ font-size:14px; color: var(--sub); margin-bottom:15px; }
+.about{ font-size:15px; line-height:1.6; margin-bottom:20px; }
+
+.links a{
+  display:block;
+  margin:10px 0;
+  padding:12px;
+  border-radius:12px;
+  text-decoration:none;
+  color:#fff;
+  font-size:15px;
+  background: linear-gradient(135deg, #6366f1, #4338ca);
+  transition:0.3s all;
+}
+.links a:hover{
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #818cf8, #6366f1);
+}
+
+.toggle-wrapper{
+  margin-top:25px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  cursor:pointer;
+  position: relative;
+  width:60px;
+  height:30px;
+}
+.toggle-wrapper span{
+  margin-right:12px;
+  color: var(--sub);
+  font-size:14px;
+  user-select:none;
+}
+
+.toggle-slider{
+  width:60px;
+  height:30px;
+  background:#ccc;
+  border-radius:30px;
+  position: relative;
+  transition: background 0.5s ease;
+}
+.toggle-slider::before{
+  content:'';
+  position:absolute;
+  width:26px;
+  height:26px;
+  background:#fff;
+  border-radius:50%;
+  top:2px;
+  left:2px;
+  transition: 0.5s all cubic-bezier(0.77,0,0.175,1);
+  box-shadow:0 2px 5px rgba(0,0,0,0.3);
+}
+body.dark .toggle-slider::before{
+  left:32px;
+}
+
+footer{ margin-top:20px; font-size:12px; color: var(--sub); }
+
+@media(max-width:480px){
+  .card{padding:25px 15px;}
+  h1{font-size:22px;}
+  .profile-pic{width:120px; height:120px;}
+}
+</style>
+</head>
+
+<body>
+  <div class="card">
+    <img src="profile.jpg" alt="Sanchit Chalakh" class="profile-pic">
+
+    <h1>Sanchit Chalakh</h1>
+    <div class="role">Student | Beginner Computer Engineering Student</div>
+
+    <div class="about">
+      Learning HTML, CSS & JavaScript <br>
+      Programming Aspiring Computer Student <br>
+      Government Polytechnic, Gadchiroli
+    </div>
+
+    <div class="links">
+      <a href="https://www.instagram.com/sanchit._chalakh?igsh=MWV5bmU0ZDZ0cngzYw==" target="_blank">📸 Instagram</a>
+      <a href="https://github.com/SanchitChalakh" target="_blank">💻 GitHub</a>
+      <a href="https://wa.me/919923653244" target="_blank">💬 WhatsApp</a>
+      <a href="Sanchit_Chalakh_Resume_Final.pdf" download>📄 Download Resume</a>
+    </div>
+
+    <div class="toggle-wrapper" onclick="toggleMode()">
+      <span>🌙 / ☀️</span>
+      <div class="toggle-slider"></div>
+    </div>
+
+    <footer>© <span id="year"></span> Sanchit</footer>
+  </div>
+
+<script>
+document.getElementById("year").innerText = new Date().getFullYear();
+
+function toggleMode(){
+  document.body.classList.toggle("dark");
+}
+</script>
+</body>
+</html>
